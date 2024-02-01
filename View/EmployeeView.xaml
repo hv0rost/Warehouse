@@ -1,0 +1,34 @@
+﻿<Window x:Class="WareHouse.View.EmployeeView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WareHouse.View"
+        mc:Ignorable="d"
+        Title="Сотрудники" Height="450" Width="800">
+
+    <StackPanel>
+        <StackPanel Orientation="Horizontal" Width="801">
+            <Button x:Name="btnAdd" Margin="10,10,5,10" Content="Добавить"
+            Height="25" Click="btnAdd_Click" Width="84"></Button>
+            <Button x:Name="btnEdit" Margin="10,10,5,10" Content="Редактировать"
+            Height="25" Click="btnEdit_Click" Width="99"></Button>
+            <Button x:Name="btnDelete" Margin="10,10,5,10" Content="Удалить"
+            Height="25" Click="btnDelete_Click" Width="88"/>
+        </StackPanel>
+
+            <ListView x:Name="EmployeeList">
+            <ListView.View>
+                <GridView>
+                    <GridView.Columns>
+                        <GridViewColumn Header="Номер" DisplayMemberBinding="{Binding Id}" Width="50"/>
+                        <GridViewColumn Header="Номер склада" DisplayMemberBinding="{Binding WarehouseId}" Width="100"/>
+                        <GridViewColumn Header="ФИО сотрудника" DisplayMemberBinding="{Binding Fio}" Width="200" />
+                        <GridViewColumn Header="Должность" DisplayMemberBinding="{Binding Position}" Width="180"/>
+                        <GridViewColumn Header="Номер телефона сотрудника" DisplayMemberBinding="{Binding PhoneNumber}" Width="200"/>
+                    </GridView.Columns>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </StackPanel>
+</Window>
